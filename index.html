@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleHub - Premium Clothing Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+               
+                <div class="logo">
+                    <div class="logo-icon">A</div>
+                    <span class="logo-text">Atelier Aurelia</span>
+                </div>
+
+                
+                <nav class="nav-desktop">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#products" class="nav-link">Products</a>
+                    <a href="#men" class="nav-link">Men</a>
+                    <a href="#women" class="nav-link">Women</a>
+                    <a href="#accessories" class="nav-link">Accessories</a>
+                </nav>
+
+                
+                <div class="nav-icons">
+                    <button class="icon-btn search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="icon-btn">
+                        <i class="fas fa-user"></i>
+                    </button>
+                    <button class="icon-btn cart-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </button>
+                    <button class="icon-btn mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+
+            
+            <nav class="nav-mobile">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#men" class="nav-link">Men</a>
+                <a href="#women" class="nav-link">Women</a>
+                <a href="#accessories" class="nav-link">Accessories</a>
+            </nav>
+        </div>
+    </header>
+
+    
+    <main>
+        
+        <section id="home" class="page active">
+            
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Discover Your
+                        <span class="hero-highlight">Perfect Style</span>
+                    </h1>
+                    <p class="hero-description">
+                        Explore our premium collection of clothing and accessories designed for the modern lifestyle.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showPage('products')">
+                            Shop Now <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-secondary">
+                            New Arrivals
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <section class="features">
+                <div class="container">
+                    <div class="features-grid">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h3>Free Shipping</h3>
+                            <p>Free shipping on orders over $50</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Secure Payment</h3>
+                            <p>100% secure payment processing</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <h3>24/7 Support</h3>
+                            <p>Round-the-clock customer support</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="categories">
+                <div class="container">
+                    <h2 class="section-title">Shop by Category</h2>
+                    <div class="categories-grid">
+                        <div class="category-card" onclick="showPage('products', 'men')">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="Men's Collection">
+                            <div class="category-overlay">
+                                <h3>Men's Collection</h3>
+                            </div>
+                        </div>
+                        <div class="category-card" onclick="showPage('products', 'women')">
+                            <img src="https://unsplash.com/photos/two-women-standing-next-to-each-other-near-a-fence-r0h58Iqc7Q4" alt="Women's Collection">
+                            <div class="category-overlay">
+                                <h3>Women's Collection</h3>
+                            </div>
+                        </div>
+                        <div class="category-card" onclick="showPage('products', 'accessories')">
+                            <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop" alt="Accessories">
+                            <div class="category-overlay">
+                                <h3>Accessories</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="featured-products">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Featured Products</h2>
+                        <p class="section-description">Discover our most popular items</p>
+                    </div>
+                    <div class="products-grid" id="featured-products-grid">
+                        
+                    </div>
+                    <div class="section-footer">
+                        <button class="btn btn-primary" onclick="showPage('products')">
+                            View All Products <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Newsletter Section -->
+            <section class="newsletter">
+                <div class="container">
+                    <h2>Stay Updated</h2>
+                    <p>Subscribe to our newsletter for the latest fashion trends and exclusive offers</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" class="newsletter-input">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        
+        <section id="products" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1 class="page-title">All Products</h1>
+                    
+                    
+                    <div class="controls">
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search products..." id="search-input">
+                        </div>
+                        <div class="control-buttons">
+                            <button class="btn btn-outline filter-toggle">
+                                <i class="fas fa-filter"></i> Filters
+                            </button>
+                            <select id="sort-select" class="sort-select">
+                                <option value="name">Name A-Z</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                            </select>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="grid">
+                                    <i class="fas fa-th"></i>
+                                </button>
+                                <button class="view-btn" data-view="list">
+                                    <i class="fas fa-list"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="products-layout">
+                    
+                    <aside class="filters-sidebar">
+                        <div class="filter-group">
+                            <h3>Categories</h3>
+                            <div class="filter-options">
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="all" checked>
+                                    <span>All Products</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="men">
+                                    <span>Men</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="women">
+                                    <span>Women</span>
+                                </label>
+                                <label class="filter-option">
+                                    <input type="radio" name="category" value="accessories">
+                                    <span>Accessories</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3>Price Range</h3>
+                            <div class="price-inputs">
+                                <input type="number" placeholder="Min" id="price-min" value="0">
+                                <span>-</span>
+                                <input type="number" placeholder="Max" id="price-max" value="500">
+                            </div>
+                            <input type="range" id="price-range" min="0" max="500" value="500" class="price-slider">
+                        </div>
+                    </aside>
+
+                    
+                    <div class="products-content">
+                        <div class="products-count">
+                            Showing <span id="products-count">0</span> products
+                        </div>
+                        <div class="products-grid" id="products-grid">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="product-detail" class="page">
+            <div class="container">
+                
+                <nav class="breadcrumb">
+                    <a href="#home">Home</a>
+                    <span>/</span>
+                    <a href="#products">Products</a>
+                    <span>/</span>
+                    <span id="product-breadcrumb">Product</span>
+                </nav>
+
+                <div class="product-detail-layout">
+                    
+                    <div class="product-images">
+                        <div class="main-image">
+                            <img id="main-product-image" src="" alt="Product">
+                        </div>
+                        <div class="thumbnail-images" id="thumbnail-images">
+                            
+                        </div>
+                    </div>
+
+                    
+                    <div class="product-info">
+                        <h1 id="product-name">Product Name</h1>
+                        <div class="product-rating">
+                            <div class="stars" id="product-stars"></div>
+                            <span id="product-rating-text">4.8 (124 reviews)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price" id="product-price">$29.99</span>
+                            <span class="original-price" id="product-original-price">$39.99</span>
+                            <span class="discount" id="product-discount">Save $10.00</span>
+                        </div>
+
+                        <div class="product-description" id="product-description">
+                            Product description will be loaded here.
+                        </div>
+
+                        <div class="product-features">
+                            <h3>Key Features</h3>
+                            <ul id="product-features-list">
+                                
+                            </ul>
+                        </div>
+
+                        
+                        <div class="product-option">
+                            <h3>Color: <span id="selected-color">White</span></h3>
+                            <div class="color-options" id="color-options">
+                                
+                            </div>
+                        </div>
+
+                        
+                        <div class="product-option">
+                            <h3>Size: <span id="selected-size">S</span></h3>
+                            <div class="size-options" id="size-options">
+                                
+                            </div>
+                        </div>
+
+                        
+                        <div class="product-option">
+                            <h3>Quantity</h3>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" onclick="changeQuantity(-1)">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span class="quantity-value" id="quantity">1</span>
+                                <button class="quantity-btn" onclick="changeQuantity(1)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        
+                        <div class="stock-status" id="stock-status">
+                            <div class="stock-indicator"></div>
+                            <span>In Stock (15 left)</span>
+                        </div>
+
+                        
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-large" id="add-to-cart-btn">
+                                <i class="fas fa-shopping-bag"></i>
+                                Add to Cart - $29.99
+                            </button>
+                            <div class="secondary-actions">
+                                <button class="btn btn-outline" id="wishlist-btn">
+                                    <i class="fas fa-heart"></i>
+                                    Add to Wishlist
+                                </button>
+                                <button class="btn btn-outline">
+                                    <i class="fas fa-share"></i>
+                                    Share
+                                </button>
+                            </div>
+                        </div>
+
+                        
+                        <div class="shipping-info">
+                            <div class="shipping-item">
+                                <i class="fas fa-truck"></i>
+                                <span>Free shipping on orders over $50</span>
+                            </div>
+                            <div class="shipping-item">
+                                <i class="fas fa-undo"></i>
+                                <span>30-day return policy</span>
+                            </div>
+                            <div class="shipping-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>2-year warranty included</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="related-products">
+                    <h2>You might also like</h2>
+                    <div class="products-grid" id="related-products-grid">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon">A</div>
+                        <span class="logo-text">StyleHub</span>
+                    </div>
+                    <p>Premium clothing store offering the latest fashion trends for men and women.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#men">Men's Collection</a></li>
+                        <li><a href="#women">Women's Collection</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Fashion Street, Lahore</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+92 345 2224719</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@AtelierAurelia.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 205 Um-e-Farwa</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
