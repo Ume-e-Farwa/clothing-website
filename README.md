@@ -216,5 +216,6 @@ This project is provided as-is for educational and commercial use. Feel free to 
 ---
 
 **StyleHub** - Premium Clothing Store
-Built with ❤️ using HTML, CSS, and JavaScript
+## 🌐 Live Demo
+- **Netlify:** [View Website](https://charming-longma-2be103.netlify.app/)
 
